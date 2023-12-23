@@ -11,7 +11,7 @@
 <body>
     <p id="os"><b>OS:</b> </p>
     <p id="language"><b>Language:</b> </p>
-    <p id="version"><b>Versiondddd:</b> </p>
+    <p id="version"><b>Version:</b> </p>
     <p id="isInClient"><b>isInClient:</b> </p>
     <p id="accessToken"><b>AccessToken:</b> </p>
     <img id="pictureUrl">
@@ -60,7 +60,21 @@
 
         async function getFriendship() {}
 
-        async function sendMsg() {}
+        async function sendMsg() {
+
+            if (liff.getContext().type !== "none" && liff.getContext().type !== "external") {
+                // Send messages here.
+                await liff.senMessages([
+
+                    {
+                        "tyep": "sticker",
+                        "stickerId": 1,
+                        "packageID": 1
+                    }
+                ])
+                alert("ส่งได้")
+            }
+        }
 
         function getContext() {
 
