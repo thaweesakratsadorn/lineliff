@@ -64,17 +64,18 @@
 
         function getContext() {}
 
-        async function getUserProfile() {}
+        async function getUserProfile() {
+            const profile = await liff.getProfile()
+            document.getElementById("pictureUrl").src = profile.pictureUrl
+            document.getElementById("userId").append(profile.userId)
+        }
 
         function getEnvironment() {
-
             document.getElementById("os").append(liff.getOS())
             document.getElementById("language").append(liff.getLanguage())
             document.getElementById("version").append(liff.getVersion())
             document.getElementById("accessToken").append(liff.getAccessToken())
             document.getElementById("isInClient").append(liff.isInClient())
-
-
             if (liff.isInClient()) {
                 document.getElementById("btnLogOut").style.display = "none"
             } else {
@@ -83,13 +84,7 @@
                 document.getElementById("btnMsg").style.display = "none"
 
             }
-
-
-
-
         }
-
-
 
 
         async function main() {
@@ -97,7 +92,7 @@
                 liffId: "2002285136-QwMY7NXm"
             })
             getEnvironment()
-                // getUserProfile()
+            getUserProfile()
                 // getContext()
                 // getFriendship()
                 // createUniversalLink()
