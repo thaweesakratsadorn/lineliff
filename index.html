@@ -11,7 +11,7 @@
 <body>
     <p id="os"><b>OS:</b> </p>
     <p id="language"><b>Language:</b> </p>
-    <p id="version"><b>Versdddion:</b> </p>
+    <p id="version"><b>Version:</b> </p>
     <p id="isInClient"><b>isInClient:</b> </p>
     <p id="accessToken"><b>AccessToken:</b> </p>
     <img id="pictureUrl">
@@ -53,7 +53,7 @@
         function logOut() {}
 
         function closed() {
-            liff.closedWindow()
+            liff.closeWindow()
         }
 
         async function scanCode() {}
@@ -118,7 +118,6 @@
             document.getElementById("isInClient").append(liff.isInClient())
             if (liff.isInClient()) {
                 document.getElementById("btnLogOut").style.display = "none"
-             
             } else {
                 document.getElementById("btnClose").style.display = "none"
                 document.getElementById("btnScanCode").style.display = "none"
